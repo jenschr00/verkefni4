@@ -1,4 +1,5 @@
 from bottle import *
+import os
 @route("/")
 def index():
     return template('verkefni4.tpl')
@@ -12,4 +13,5 @@ def a(kt):
 def villa(error):
     return("vefsíða ekki til")
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0',port=os.environ.get('PORT'))
+
